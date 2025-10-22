@@ -17,7 +17,8 @@ locale-gen
 eselect locale set pt_BR.UTF-8
 env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
 
-echo "sys-kernel/installkernel grub" > /etc/portage/package.use/installkernel
+echo "sys-kernel/installkernel grub" >> /etc/portage/package.use/installkernel
+echo "llvm-core/clang extra" >> /etc/portage/package.use/clang
 emerge sys-kernel/linux-firmware sys-kernel/gentoo-kernel sys-firmware/sof-firmware
 
 echo "/dev/nvme0n1p1		/efi		vfat		umask=0077,tz=UTC 0 2" >> /etc/fstab
@@ -44,7 +45,7 @@ emerge gui-libs/display-manager-init app-admin/doas
 echo "permit persist :wheel" >> /etc/doas.conf
 chown -c root:root /etc/doas.conf
 chmod -c 0400 /etc/doas.conf
-emerge gnome-base/gnome-light dev-lang/rust app-editors/helix x11-terms/xfce4-terminal
+emerge gnome-base/gnome-light dev-lang/rust app-editors/helix x11-terms/xfce4-terminal dev-util/ruff
 emerge app-shells/fish gnome-extra/gnome-shell-extension-pop-shell
 emerge -aC gnome-extra/gnome-shell-extension-pop-shell
 emerge sys-apps/flatpak net-im/discord media-sound/spotify gnome-extra/gnome-tweaks media-gfx/eog
