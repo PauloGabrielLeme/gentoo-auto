@@ -40,7 +40,10 @@ echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf
 grub-install --efi-directory=/efi
 grub-mkconfig -o /boot/grub/grub.cfg
 
-emerge gui-libs/display-manager-init
+emerge gui-libs/display-manager-init app-admin/doas
+echo "permit persist :wheel" >> /etc/doas.conf
+chown -c root:root /etc/doas.conf
+chmod -c 0400 /etc/doas.conf
 emerge gnome-base/gnome-light dev-lang/rust app-editors/helix x11-terms/xfce4-terminal
 emerge app-shells/fish gnome-extra/gnome-shell-extension-pop-shell
 emerge -aC gnome-extra/gnome-shell-extension-pop-shell
