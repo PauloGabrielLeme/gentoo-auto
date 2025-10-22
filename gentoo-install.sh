@@ -49,6 +49,7 @@ emerge gnome-base/gnome-light dev-lang/rust app-editors/helix x11-terms/xfce4-te
 emerge app-shells/fish gnome-extra/gnome-shell-extension-pop-shell
 emerge -aC gnome-extra/gnome-shell-extension-pop-shell
 emerge sys-apps/flatpak net-im/discord media-sound/spotify gnome-extra/gnome-tweaks media-gfx/eog
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 emerge media-fonts/noto media-fonts/noto-emoji media-fonts/noto-cjk
 
 exit
