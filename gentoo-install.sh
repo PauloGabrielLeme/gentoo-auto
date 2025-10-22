@@ -12,7 +12,7 @@ emerge --oneshot app-portage/cpuid2cpuflags
 echo "*/* $(cpuid2cpuflags)" > /etc/portage/package.use/00cpu-flags
 emerge --update --deep --changed-use @world
 emerge --depclean
-echo "pt_BR.UTF-8" > /etc/locale.gen
+echo "pt_BR.UTF-8" >> /etc/locale.gen
 locale-gen
 eselect locale set pt_BR.UTF-8
 env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
