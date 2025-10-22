@@ -46,7 +46,7 @@ echo "permit persist :wheel" >> /etc/doas.conf
 chown -c root:root /etc/doas.conf
 chmod -c 0400 /etc/doas.conf
 emerge gnome-base/gnome-light dev-lang/rust app-editors/helix x11-terms/xfce4-terminal dev-util/ruff
-emerge app-shells/fish gnome-extra/gnome-shell-extension-pop-shell
+emerge app-shells/fish app-portage/gentoolkit gnome-extra/gnome-shell-extension-pop-shell
 emerge -aC gnome-extra/gnome-shell-extension-pop-shell
 emerge sys-apps/flatpak net-im/discord media-sound/spotify gnome-extra/gnome-tweaks media-gfx/eog
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
